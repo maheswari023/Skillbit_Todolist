@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a192f, #0d1b2a);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(0, 136, 255, 0.3);
+  border-radius: 50%;
+  animation: rise 15s infinite ease-in;
+}
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(0.5); opacity: 0; }
+}
+
+
+.todo-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(15, 30, 54, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  width: 420px;
+  box-shadow: 0 0 30px rgba(0,136,255,0.3);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  color: white;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.task-item {
+  background: linear-gradient(145deg, #0f1e36, #162447);
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.task-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,136,255,0.4);
+}
+.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+
+.low { border-left: 5px solid #2ecc71; }
+.medium { border-left: 5px solid #f39c12; }
+.high { border-left: 5px solid #e74c3c; }
+
+
+.progress-container {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  height: 12px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transition: width 0.4s ease-in-out;
+}
